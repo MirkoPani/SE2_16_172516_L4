@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>
+        Employee Manager
+    </title>
+</head>
+
+<body>
+    Benvenuto
+    <p>
+        Messaggio:
+        <%= message ? message : '' %>
+    </p>
+    <form action="http://127.0.0.1:8080/search" method='post'>
+        <p>Inserisci l'ID: </p>
+        <input type="text" name="idSearchTxt" />
+        <button>Cerca employee</button>
+    </form>
+    <form action="http://127.0.0.1:8080/delete" method='post'>
+        <p>Inserisci l'ID: </p>
+        <input type="text" name="idSearchTxt" />
+        <button>Rimuovi employee</button>
+    </form>
+
+    <button id="menuBtn" onclick="V.toggleMenu();">Menu</button>
+
+    <div id="employeeDiv" style="<%= style%>">
+        <form action="http://127.0.0.1:8080/insert" method='post'>
+            <p>Id:</p>
+            <input type="text" id="idValueTxt" name="idValueTxt" value="<%= employee.ID ? employee.ID : '' %>" />
+            <p>Name:</p>
+            <input type="text" id="nameValueTxt" name="nameValueTxt" value="<%= employee.Name ? employee.Name : '' %>" />
+            <p>Surname:</p>
+            <input type="text" id="surnameValueTxt" name="surnameValueTxt" value="<%= employee.Surname ? employee.Surname : '' %>" />
+            <p>Level:</p>
+            <input type="text" id="levelValueTxt" name="levelValueTxt" value="<%= employee.Level ? employee.Level : '' %>" />
+            <p>Salary:</p>
+            <input type="text" id="salaryValueTxt" name="salaryValueTxt" value="<%= employee.Salary ? employee.Salary : '' %>" />
+            <button id="insertBtn" name="insertBtn"> Inserisci o aggiorna employee </button>
+        </form>
+    </div>
+    <script type="text/javascript" src="/js/client.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>
